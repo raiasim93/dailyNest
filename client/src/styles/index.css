@@ -1,0 +1,51 @@
+
+:root{
+  background-color:#19485A;
+  --main-color:  #19485A; 
+  --secondary-color: #D9E0A0;
+  --heading-color: #1A1A1A;
+
+  /* font settings */
+  --font-family-sans:"Inder", sans-serif;
+  font-size: 16px;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans) !important;
+}
+/*  screensizing  */
+.screen-sizing{
+  max-width: 1150px;
+  background-color: var(--main-color);
+  margin: 0 auto;
+}
+
+.text-color-secondary{
+  color: var(--secondary-color) !important;
+}
+.bg-button-login{
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+.bg-secondary{
+  background-color: var(--secondary-color) !important;
+  color: var(--main-color);
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  :root {
+   font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 0.5rem;
+  }
+}
