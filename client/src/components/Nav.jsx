@@ -31,6 +31,17 @@ const Navbar = () => {
     </div>       
     </div>
     
+    <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+      <div className="d-flex justify-content-between align-items-center p-3">
+          <h2 className='text-white'> DailyNestt </h2>
+          <CloseIcon className='text-white pointer' onClick={toggleSidebar} />
+      </div>
+      <div className="sidebar-links">
+          <a className='p-3 mb-2   border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100'> Log In  </a>
+          <a className="p-3  mb- 2 border d-md-none text-decoration-none text-center text-white fs-3   d-block w-100"> Create Account </a>
+      </div>
+      </div>
+      
     </>
     
   )
