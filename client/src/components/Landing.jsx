@@ -21,12 +21,12 @@ const Landing = () => {
         }
     ]
   return (
-    <div className='screen-sizing p-4 border-bottom'>
-        <div className="row text-white fs-sm-6 d-flex justify-content-center align-items-center">
-        <h1 className=' text-center text-warning text-small-left mb-2 mb-lg-5 pb-3 border-bottom'> Free CheckList Maker </h1>
+    <div className='screen-sizing py-4 border-bottom '>
+        <div className="mt-sm-3 mt-lg-5 p-3 row text-white fs-sm-6 d-flex justify-content-center align-items-center">
+            
             {/* first column to give app info  */}
             <div className="col-lg-6 col-sm-12 order-2 order-lg-1 text-center">
-               
+{/*                
                 {
                     appBenefits.map((item,index)=> {
                         return(
@@ -40,13 +40,20 @@ const Landing = () => {
                         )
                     })
                     
-                }
-                <div className='text-center'>
-                <button className="btn btn-success">
-                    Create your Checklist 
+                } */}
+                <div className="p-3 mb-3 col-sm-8 col-md-12 mx-auto">
+                <h1 className='display-4 fw-bold text-info'>Simplify Your Day</h1>
+                <p className='fs-5'>
+                    Stay organized and on top of your tasks with DailyNest, the smart to-do list app designed to help you achieve more with less stress.
+                </p>
+            </div>
+            <div className='text-center'>
+                <button className="btn btn-success btn-lg">
+                    Create Your Checklist 
                     <ChevronRightIcon />
                 </button>
-                </div>
+            </div>
+                
             </div>
             
             {/* right column for image  */}
@@ -61,7 +68,7 @@ const Landing = () => {
                         objectFit: 'cover', 
                         opacity: 0.6 // Ensure it covers the div and is responsive
                     }}
-                    className='rounded'/>
+                    className='rounded-circle landingImage'/>
                 </div>
             </div>
         </div>
