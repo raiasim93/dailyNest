@@ -3,7 +3,7 @@ import CardFeature from './CardFeature';
 
 const Features = ({feature}) => {
   return (
-    <div className='features-container mt-lg-5 mb-lg-5 mt-md-3'>
+    <div className='features-container'>
         <div className="row p-sm-3 p-md-5">
             <div className="col-10 mx-auto">
                 <div>

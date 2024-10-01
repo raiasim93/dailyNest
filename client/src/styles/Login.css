@@ -1,0 +1,10 @@
+
+.login-page-container {
+  height: 100vh; 
+}
+
+.login-wrapper{
+  height: 400px;
+  background: rgb(20,20,20);
+  background: linear-gradient(0deg, rgba(20,20,20,1) 4%, rgba(82,100,107,1) 39%, rgba(144,148,158,1) 69%);
+}

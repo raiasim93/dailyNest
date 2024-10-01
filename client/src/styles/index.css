@@ -1,5 +1,4 @@
 :root {
-  /* --main-color: rgb(15, 32, 80); */
   --main-color: #043873;
   --secondary-color: #D9E0A0;
   --tertiary-color: #4F9CF9;
@@ -7,7 +6,8 @@
   /* Font settings */
   --font-family-sans: "Inder", sans-serif;
   font-size: 16px;
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background-color: white !important;
 }
 
 body {
@@ -15,12 +15,8 @@ body {
   padding: 0 !important;
   font-family: var(--font-family-sans) !important;
 }
-
-/* Screen sizing */
-.screen-sizing {
-  max-width: 1150px;
-  background-color: var(--main-color);
-  margin: 0 auto;
+.primary-color{
+  background: var(--main-color);
 }
 
 .features-container {
@@ -71,7 +67,7 @@ img.landingImage {
   width: 100%; /* Make image fill container */
   height: auto;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Feature Box */

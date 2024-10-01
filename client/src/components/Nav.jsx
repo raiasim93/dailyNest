@@ -13,7 +13,7 @@ const Navbar = () => {
   }
   return (
     <>
-    <div className=' navbar-custom py-4 d-flex'> 
+    <div className='g-0 navbar-custom  py-4 d-flex'> 
     <div className="row w-100  ">
       <div className="col-10 mx-auto d-flex">
       <div className='col-6' >
@@ -37,8 +37,11 @@ const Navbar = () => {
           <CloseIcon className='text-white pointer' onClick={toggleSidebar} />
       </div>
       <div className="sidebar-links">
-          <a className='p-3 mb-2   border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100'> Log In  </a>
-          <a className="p-3  mb- 2 border d-md-none text-decoration-none text-center text-white fs-3   d-block w-100"> Create Account </a>
+          <a className='p-3 mb-2 border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100'> Log In  </a>
+          <a className="p-3 mb-2 border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100"> Create Account </a>
+          {/* render if user is already logged in  */}
+          <a className='p-3 mb-2 border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100'> History  </a>
+          <a className="p-3 mb-2 border d-md-none text-decoration-none text-center text-white fs-3 d-block w-100"> Logout </a>
       </div>
       </div>
       

@@ -5,6 +5,7 @@ const { Pool } = require("pg");
 require('dotenv').config();
 
 const port = process.env.PORT;
+const domain = "localhost:8080/"
 // setting up the express server to use locahost:5713
 const corsOptions = {
     origin: ["http://localhost:5713"],

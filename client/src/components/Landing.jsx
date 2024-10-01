@@ -4,9 +4,12 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 const Landing = () => {
   return (
-    <div className='screen-sizing py-4 border-bottom '>
-        <div className="mt-sm-3 mt-lg-5 p-3 row text-white fs-sm-6 d-flex justify-content-center align-items-center">
-            
+    <div className='g-0'>
+
+            <div className="row g-0 w-100 primary-color">
+                <div className="col-10 mx-auto">
+                    <div className="mt-sm-3 mt-lg-5 p-3 row text-white fs-sm-6 d-flex justify-content-center align-items-center">
+                         
             {/* first column to give app info  */}
             <div className="col-lg-6 col-sm-12 order-2 order-lg-1 text-center">
                 <div className="row">
@@ -19,7 +22,7 @@ const Landing = () => {
                 </div>
                 
             <div className='text-center'>
-                <button className="btn btn-info btn-lg">
+                <button className="btn btn-info btn-lg text-white">
                     Create Your Checklist 
                     <ChevronRightIcon />
                 </button>
@@ -42,8 +45,13 @@ const Landing = () => {
                     className='rounded-circle landingImage'/>
                 </div>
             </div>
+                    </div>
+                </div>
+            </div>
+            
+           
         </div>
-    </div>
+   
   )
 }
 

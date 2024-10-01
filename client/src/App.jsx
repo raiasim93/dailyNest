@@ -7,17 +7,22 @@ import Landing from './components/Landing';
 import Footer from './components/Footer';
 import Features from './components/Features';
 import appFeatures from './components/appFeatures';
+import '../src/styles/Login.css';
+import LoginPage from './components/pages /LoginPage';
+
+
 
 
 const App = () => {
   
   return (
     <>
-      <div className='container-fluid g-0 ' id='dailynest' style={{ backgroundColor: 'var(--main-color)' }}>
-          <Navbar />
+      <div className='container-fluid g-0 ' id='dailynest' style={{ backgroundColor: 'white'}}>
+          {/* <Navbar />
           <Landing />
           <Features feature = {appFeatures} />
-          <Footer />
+          <Footer /> */}
+          <LoginPage />
       </div>     
     </>
   )
