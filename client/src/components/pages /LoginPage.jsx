@@ -3,12 +3,16 @@ import '../../styles/Login.css';
 import { GitHub, Instagram } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [form, setForm] = useState({
     email: '',
     password: ''
   });
+
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const {name, value} = e.target;
     setForm({
@@ -26,6 +30,13 @@ const LoginPage = () => {
     console.log(form.email);
     console.log(form.password);
   }
+
+  // hanlde close button
+  const handleClose = () => {
+    navigate('/');
+  }
+    
+
   return (
     <div className='login-page-container mx-auto d-flex justify-content-center align-items-center'>
       <div className="m-4 row w-100">
@@ -36,7 +47,11 @@ const LoginPage = () => {
               Already have an account? 
               <a className='ms-3 text-success'> Login </a>  
             </p>
-            <CloseIcon className='close-button'/>
+            <CloseIcon 
+              className='close-button' 
+              onClick={handleClose}
+              style={{cursor: 'pointer'}} 
+            />
           </div>
           {/* Form starts here */}
           <form className="flex-grow-1 d-flex flex-column mt-3" onSubmit={handleSubmit}>

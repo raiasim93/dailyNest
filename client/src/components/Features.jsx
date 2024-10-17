@@ -4,7 +4,7 @@ import CardFeature from './CardFeature';
 const Features = ({feature}) => {
   return (
     <div className='features-container'>
-        <div className="row p-sm-3 p-md-5">
+        <div className="row p-5">
             <div className="col-10 mx-auto">
                 <div>
                     <h2 className= 'feature-wrapper-title text-center fw-bold fs-1 p-4'> What we offer </h2>

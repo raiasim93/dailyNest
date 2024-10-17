@@ -1,6 +1,7 @@
 .login-page-container {
-  background: rgb(20,20,20);
-  background: linear-gradient(0deg, rgba(144,148,158,1) 4%, rgba(82,100,107,1) 39%, rgba(20,20,20,1) 69%);
+  background: linear-gradient(90deg, #032d5f, #043873, #054596);
+  color: white;
+
   height: 100vh; 
 }
 
@@ -17,7 +18,7 @@
   position: absolute;  
   top: 20px;           
   right: 20px;         
-  cursor: pointer;     
+  cursor: pointer !important;     
   color: white;        
 }
 a{
