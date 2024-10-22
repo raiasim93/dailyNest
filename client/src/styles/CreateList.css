@@ -1,18 +1,59 @@
 
-/* .create-list-wrapper {
-    min-height: 700px; /* Set minimum height */
-    
-   
-  /*  */
-/* .create-list-container{
-    min-height: 700px;
-   
-} */ 
-
 .box-shadow{
-    box-shadow: 0 0  6px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 4px rgba(179, 179, 179, 0.1)
 }
 
+/* set up minimum height for the input element to add in new task */
 .custom-height-input{
     min-height: 50px;
 }
+
+/* Add transition to h2 elements for smooth animation */
+.animate-hover {
+    transition: transform 0.4s ease, color 0.4s ease;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .animate-hover:hover {
+    color: #ff6f61; /* Change text color when hovered */
+    animation: bounceIn 1s ease forwards, scaleUp 1s ease forwards;
+  }
+  
+  /* Keyframes for scaling up */
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    50% {
+      transform: scale(1.2) translateY(-10px);
+    }
+    100% {
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  /* Keyframes for a bounce-like animation */
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .animate-hover {
+      transform: scale(1); /* Reset scale on small screens if needed */
+      color: #007bff; /* Reset color on small screens */
+      animation: none; /* Disable animation on small screens */
+    }
+  }
+  

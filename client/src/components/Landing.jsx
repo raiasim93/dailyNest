@@ -21,7 +21,7 @@ const Landing = () => {
                     <div className="col-lg-6 col-sm-12 order-2 order-lg-1 text-center">
                         <div className="row">
                         <div className="p-3 mb-3 col-sm-12 col-md-12 mx-auto">
-                            <h1 className='display-4 fw-bold text-info'>Simplify Your Day</h1>
+                            <h1 className='display-4 fw-bold text-white'>Simplify Your Day</h1>
                             <p className='fs-5'>
                                 Stay organized and on top of your tasks with DailyNest, the smart to-do list app designed to help you achieve more with less stress.
                             </p>
@@ -29,7 +29,7 @@ const Landing = () => {
                         </div>
                         
                     <div className='text-center'>
-                        <button onClick={hanldeClickCreateList} className="btn btn-info btn-lg text-white">
+                        <button onClick={hanldeClickCreateList} className="btn btn-light text-dark">
                             Create Your Checklist 
                             <ChevronRightIcon />
                         </button>
