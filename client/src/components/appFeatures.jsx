@@ -18,6 +18,7 @@ const appFeatures = [
       desc: "Monitor your task completion with visual indicators, helping you stay motivated and accountable as you check off items.",
       icon: <StackedLineChartIcon fontSize="large" />
     },
+   
     
   ]
 

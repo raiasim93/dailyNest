@@ -21,15 +21,15 @@ const Landing = () => {
                     <div className="col-lg-6 col-sm-12 order-2 order-lg-1 text-center">
                         <div className="row">
                         <div className="p-3 mb-3 col-sm-12 col-md-12 mx-auto">
-                            <h1 className='display-4 fw-bold text-white'>Simplify Your Day</h1>
-                            <p className='fs-5'>
+                            <h1 className='display-4 fw-bold text-white mb-5'>Simplify Your Day</h1>
+                            <p className='fs-5 mt-3'>
                                 Stay organized and on top of your tasks with DailyNest, the smart to-do list app designed to help you achieve more with less stress.
                             </p>
                         </div>
                         </div>
                         
                     <div className='text-center'>
-                        <button onClick={hanldeClickCreateList} className="btn btn-light text-dark">
+                        <button onClick={hanldeClickCreateList} className="p-3 rounded-pill fw-bold btn btn-custom-button-animated ">
                             Create Your Checklist 
                             <ChevronRightIcon />
                         </button>
@@ -43,12 +43,6 @@ const Landing = () => {
                             <img 
                             src={landingImage}
                             alt="Landing"
-                            style={{
-                                width: '80%',
-                                height: '80%',
-                                objectFit: 'cover', 
-                                opacity: 0.6 // Ensure it covers the div and is responsive
-                            }}
                             className='rounded-circle landingImage'/>
                         </div>
                     </div>

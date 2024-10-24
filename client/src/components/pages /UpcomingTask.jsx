@@ -8,7 +8,7 @@ const UpcomingTask = ({tasks, handleCompleteTask, handleRemoveTask}) => {
     <>
      {/* upcoming tasks section */}
      <section className="p-4 col-10 mx-auto bg-light text-secondary fw-normal">
-          <p className="fs-3 ">Upcoming Tasks</p>
+          <p className="fs-1 text-dark">Upcoming Tasks</p>
           <div className="row">
             {tasks.length > 0 ? (
               tasks.map((task, index) => (

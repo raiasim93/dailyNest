@@ -17,7 +17,7 @@ const CreateTask = () => {
     date: null,
     timestamp: null,
   });
-  
+
   // array to store the tasks which have been completed
   const [tasks, setTasks] = useState([
     {
@@ -47,6 +47,66 @@ const CreateTask = () => {
     {
       title: "Attend workshop",
       date: dayjs("2024-10-27"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Plan next week’s schedule",
+      date: dayjs("2024-10-28"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Complete project presentation",
+      date: dayjs("2024-10-29"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Submit project report",
+      date: dayjs("2024-10-30"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Attend networking event",
+      date: dayjs("2024-10-31"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Read industry articles",
+      date: dayjs("2024-11-01"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Complete online course module",
+      date: dayjs("2024-11-02"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Update resume",
+      date: dayjs("2024-11-03"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Practice coding problems",
+      date: dayjs("2024-11-04"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Join local tech meetup",
+      date: dayjs("2024-11-05"),
+      timestamp: new Date(),
+      completed: false,
+    },
+    {
+      title: "Volunteer for community service",
+      date: dayjs("2024-11-06"),
       timestamp: new Date(),
       completed: false,
     },
@@ -86,12 +146,34 @@ const CreateTask = () => {
       setIsInputOpen(false);
     }
   };
-
   const handleCompleteTask = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].completed = true;
     setTasks(updatedTasks);
+
+    // Add the completed task to the completedTasks state with completedDate
+    const completedTask = {
+      ...updatedTasks[index],
+      completedDate: dayjs(), // Add completed date
+    };
+
+    setCompletedTasks((prevCompletedTasks) => [
+      ...prevCompletedTasks,
+      completedTask,
+    ]);
   };
+
+  // const handleCompleteTask = (index) => {
+  //   const updatedTasks = [...tasks];
+  //   updatedTasks[index].completed = true;
+  //   setTasks(updatedTasks);
+  //   //add completed tasks to the completedTask state
+
+  //   setCompletedTasks((prevCompletedTasks) => [
+  //     ...prevCompletedTasks,
+  //     { ...updatedTasks[i], completedDate: dayjs() }, // Include the completed status
+  //   ]);
+  // };
 
   const handleRemoveTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
@@ -99,50 +181,49 @@ const CreateTask = () => {
   };
 
   // calculating the numbers of completion
-  const completedCount = tasks.filter(task => task.completed).length;
+  const completedCount = tasks.filter((task) => task.completed).length;
   const totalCount = tasks.length;
-  const completionRate = totalCount > 0 ? Math.round((completedCount/totalCount) * 100): 0;
+  const completionRate =
+    totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   return (
-    <>
+   <>
     <CreateTitles
-      completedCount = {completedCount}
-      totalCount = {totalCount}
-      completionRate = {completionRate}
-    />
-     <div className="mb-5">
-      <div className="row g-0 w-100">
-        {/* create task section */}
-        <section className="p-4 col-10 mx-auto bg-light text-secondary ">
-          <p className="fs-3 h-5 fw-normal">Add Task</p>
+        completedCount={completedCount}
+        totalCount={totalCount}
+        completionRate={completionRate}
+      />
+      <div className="mb-5">
+        <div className="row g-0 w-100">
+          {/* create task section */}
+          <section className="p-4 col-10 mx-auto bg-light text-secondary mb-3">
+            <p className="fs-3 h-5 fw-normal">Add Task</p>
 
-          <div className="row">
-            {/* Task Input Field - Full Width */}
-            <div className="col-12 mb-3">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control p-3 fs-5"
-                  placeholder="Enter task"
-                  value={newTask.title}
-                  onClick={() => setIsInputOpen(true)} // Open the input form on click
-                  onChange={handleInputChange} // Update task title on input change
-                />
+            <div className="row">
+              <div className="col-12 mb-3">
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="form-control p-3 fs-5"
+                    placeholder="Enter task"
+                    value={newTask.title}
+                    onClick={() => setIsInputOpen(true)} // Open the input form on click
+                    onChange={handleInputChange} // Update task title on input change
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Render the second and third row only when the input is active */}
-            {isInputOpen && (
-              <>
-                {/* Second Row: DatePicker */}
+              {/* Apply sliding animation */}
+              <div className={`slide-container ${isInputOpen ? "show" : ""}`}>
                 <div className="col-12 d-flex align-items-center">
-                  <div className="col-6  ">
+                  <div className="col-6">
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <DatePicker
-                        className="w-100 "
+                        className="w-100"
                         label="Pick a date"
                         value={selectedDate}
-                        onChange={(newDate) => setSelectedDate(newDate)} // Update the selected date
+                        minDate={dayjs()}
+                        onChange={(newDate) => setSelectedDate(newDate)}
                         textField={(params) => (
                           <input
                             {...params.inputProps}
@@ -152,35 +233,46 @@ const CreateTask = () => {
                       />
                     </LocalizationProvider>
                   </div>
-
-                  {/* Third Row: Edit and Submit Icons */}
                   <div className="col-6 d-flex justify-content-end align-items-center">
                     <div className="col-4 d-flex justify-content-center align-items-stretch">
                       <button
                         className="btn btn-outline-primary w-100 p-3"
-                        onClick={handleSubmit} // Call the handleSubmit function on submit
+                        onClick={handleSubmit}
                       >
-                        <DoneIcon />{" "}
+                        <DoneIcon />
                         <span className="d-none d-lg-inline"> Add </span>
                       </button>
                     </div>
                   </div>
                 </div>
-              </>
-            )}
-            {/*  */}
-          </div>
-        </section>
+              </div>
+            </div>
+          </section>
 
-        {/* upcoming tasks section */}
-        <UpcomingTask
-         tasks={tasks} 
-         handleCompleteTask={handleCompleteTask}
-         handleRemoveTask={handleRemoveTask}/>
+          <UpcomingTask
+            tasks={tasks}
+            handleCompleteTask={handleCompleteTask}
+            handleRemoveTask={handleRemoveTask}
+          />
+          <section className="p-4 col-10 mx-auto bg-light">
+            <h1>Task History</h1>
+            <ul className="list-unstyled">
+              {completedTasks.map((task, index) => (
+                <li
+                  key={index}
+                  className="bg-white p-3 mb-2 border rounded d-flex justify-content-between align-items-center"
+                >
+                  <span>{task.title}</span>
+                  <span>
+                    Completed at {task.completedDate.format("hh:mm:ss")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </div>
-    </div>
-    </>
-   
+   </>
   );
 };
 

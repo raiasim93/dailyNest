@@ -22,12 +22,12 @@ const CreateTitles = ({completedCount, totalCount, completionRate}) => {
   return (
     <div className="g-0  d-flex  justify-content-center align-items-center text-secondary ">
       <div className="row  w-100 mb-0">
-        <section className="p-4 col-10  mx-auto bg-light mb-3">
+        <section className="p-4 col-10  mx-auto bg-light mt-3 mb-3">
           <div className="row d-flex justify-content-between align-items-center content-header-section box-shadow p-4">
             {/* First column (date section) */}
             <div className="col-12 col-md-6 d-flex flex-column text-center text-md-start mb-sm-3 mb-md-0">
               <div className="col-12 mb-2 mb-md-4 text-dark">
-                <p className="fs-1 fw-normal mb-0">{currentDay}</p>
+                <p className="fs-1 text-success mb-0">{currentDay}</p>
               </div>
               <div className="col-12">
                 <div className="d-flex justify-content-center justify-content-md-start align-items-center text-secondary">
@@ -38,7 +38,7 @@ const CreateTitles = ({completedCount, totalCount, completionRate}) => {
 
             {/* Second column (buttons section) */}
             {/* Progress bar - set to display first on small screens */}
-            <div className="col-12 col-md-6 d-flex flex-row flex-md-column align-items-center justify-content-center">
+            <div className="col-12 col-md-6 d-flex flex-row flex-md-column align-items-left justify-content-center">
               <p className="fs-2 fw-normal mb-3 d-none d-md-block">
                 Task Status
               </p>
